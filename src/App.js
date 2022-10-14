@@ -7,6 +7,8 @@ import DataBinding from './Databinding/DataBinding';
 import HandleEvent from './HandleEvent/HandleEvent';
 import StyleWithJSX from './StyleWithJSX/StyleWithJSX';
 import StateDemo from './StateDemo/StateDemo/StateDemo';
+import RenderWithMap from './RenderWithMap/RenderWithMap';
+import LayoutFilm from './RenderWithMap/LayoutFilm';
 
 function App() {
   return (
@@ -25,7 +27,9 @@ function App() {
       {/* <DataBinding /> */}
       {/* <HandleEvent /> */}
       {/* <StyleWithJSX /> */}
-      <StateDemo />
+      {/* <StateDemo /> */}
+      {/* <RenderWithMap /> */}
+      <LayoutFilm />
     </div>
   );
 }
