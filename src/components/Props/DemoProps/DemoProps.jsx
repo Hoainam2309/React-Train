@@ -13,9 +13,9 @@ export default class DemoProps extends Component {
 
 
     renderPerson = () => {
-        return data.map((item, index) => {
+        return data.map((person, index) => {
             return <div className='col-3' key={index}>
-                <ProductCard />
+                <ProductCard item={person} />
             </div>
         })
     }

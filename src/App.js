@@ -10,6 +10,7 @@ import StateDemo from './StateDemo/StateDemo/StateDemo';
 import RenderWithMap from './RenderWithMap/RenderWithMap';
 import LayoutFilm from './RenderWithMap/LayoutFilm';
 import DemoProps from './components/Props/DemoProps/DemoProps';
+import ShoesShop from './components/Props/ShoesShop/ShoesShop';
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
       {/* <StateDemo /> */}
       {/* <RenderWithMap /> */}
       {/* <LayoutFilm /> */}
-      <DemoProps />
+      {/* <DemoProps /> */}
+      <ShoesShop />
     </div>
   );
 }
