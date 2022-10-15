@@ -12,6 +12,7 @@ import LayoutFilm from './RenderWithMap/LayoutFilm';
 import DemoProps from './components/Props/DemoProps/DemoProps';
 import ShoesShop from './components/Props/ShoesShop/ShoesShop';
 import DemoXemChiTiet from './components/Props/DemoXemChiTiet/DemoXemChiTiet';
+import ExerciseCarStore from './components/Props/ExerciseCarStore/ExerciseCarStore';
 
 function App() {
   return (
@@ -35,7 +36,8 @@ function App() {
       {/* <LayoutFilm /> */}
       {/* <DemoProps /> */}
       {/* <ShoesShop /> */}
-      <DemoXemChiTiet />
+      {/* <DemoXemChiTiet /> */}
+      <ExerciseCarStore />
     </div>
   );
 }
