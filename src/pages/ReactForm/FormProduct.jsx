@@ -60,7 +60,15 @@ export default class FormProduct extends Component {
     handleSubmit = (event) => {
         //chặn sự kiện reload của browser
         event.preventDefault();
+
+
+        this.props.addProduct(this.state.productInfo);
+        
+        
     }
+
+
+    
 
     render() {
         return (
@@ -108,7 +116,7 @@ export default class FormProduct extends Component {
                     </div>
                 </div>
                 <div className='car-footer'>
-                    <button className='btn btn-success mx-2'>create</button>
+                    <button className='btn btn-success mx-2' onClick={this.handleSubmit}>create</button>
                     <button type='button' className='btn btn-warning'>update</button>
                 </div>
             </form>
