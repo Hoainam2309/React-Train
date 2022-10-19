@@ -6,8 +6,8 @@ export default class ReactForm extends Component {
 
 state = {
   arrProduct : [
-       {id:1,name:'product 1',price:1000,img:'https://picsum.photos/50/50',description:'description 1',type :' movile'},
-       {id:2,name:'product 2',price:2000,img:'https://picsum.photos/50/50',description:'description 2',type :' tablet'}
+       {id:1,name:'product 1',price:1000,img:'https://picsum.photos/50/50',description:'description 1',productType :' movile'},
+       {id:2,name:'product 2',price:2000,img:'https://picsum.photos/50/50',description:'description 2',productType :' tablet'}
 
   ]
 }
@@ -62,4 +62,10 @@ getStore () {
       </div>
     )
   }
+componentDidMount() {
+  this.setState({
+    arrProduct:this.getStore()
+  })
+}
+
 }

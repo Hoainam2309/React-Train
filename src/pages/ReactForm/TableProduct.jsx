@@ -26,7 +26,7 @@ export default class TableProduct extends Component {
                <td><img src={prod.img} alt="..." width={50} /></td>
                <td>{prod.name}</td>
                <td>{prod.price}</td>
-               <td>{prod.type}</td>
+               <td>{prod.productType}</td>
                <td>{prod.description}d</td>
                <td>
                  <button className='btn btn-danger' onClick={()=>{delPro(prod.id)}}>Del</button>
