@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 
+
+/*
+pureComponent là component ko có lifecycle 
+*/
+
 export default class Child extends Component {
     constructor(props) {
         super(props);

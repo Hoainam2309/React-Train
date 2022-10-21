@@ -6,48 +6,42 @@ export default class FormProduct extends Component {
             id: '',
             name: '',
             price: '',
-            productType: 'mobile',
+            productType: ' mobile',
             description: '',
             img: ''
-
         },
         error: {
             id: '',
             name: '',
             price: '',
-            productType: '',
             description: '',
             img: ''
-
         }
-
     }
 
     handleChange = (event) => {
-
-        let { value, id } = event.target;
+        let { value, id } = event.target
         let dataType = event.target.getAttribute('data-type');
-
-        //xử lý productInfo
-        let newValue = this.state.productInfo;
+        // xử lý productInfo
+        let newValue = this.state.productInfo
         newValue[id] = value;
 
-        // xử lý error
-        let newError = this.state.error;
+        //xử lý error
+        let newError = this.state.error
         let messError = '';
         if (value.trim() === '') {
-            messError = id + ' không được bỏ trống !';
+            messError = id + ' không được bỏ trống';
         } else {
             if (dataType == 'number') {
-                let regexNumber = /^\d+$/;
-                if (!regexNumber.test(value)) {
+                let regex = /^\d+$/;
+                if (!regex.test(value)) {
                     messError = id + ' phải là số !';
                 }
             }
-
         }
-
         newError[id] = messError;
+
+        //setState lại
         this.setState({
             productInfo: newValue,
             error: newError
@@ -58,29 +52,24 @@ export default class FormProduct extends Component {
     }
 
     handleSubmit = (event) => {
-        //chặn sự kiện reload của browser
         event.preventDefault();
-
-
-        this.props.addProduct(this.state.productInfo);
-        
-        
+        console.log(this.state);
     }
 
 
-    
+
 
     render() {
         return (
-            <form className='card' >
-                <div className='card-header'>
-                    create product
+            <form className='card' onSubmit={this.handleSubmit}>
+                <div className='card-header bg-dark text-warning'>
+                    Create Product
                 </div>
-                <div className='car-body row'>
+                <div className='card-body row'>
                     <div className='col-6'>
                         <div className='form-group'>
                             <p>id</p>
-                            <input className='form-control' id='id' name='id' onInput={this.handleChange} />
+                            <input data-type='number' className='form-control' id='id' name='id' onInput={this.handleChange} />
                             <p className='text-danger'>{this.state.error.id}</p>
                         </div>
                         <div className='form-group'>
@@ -101,8 +90,8 @@ export default class FormProduct extends Component {
                             <p className='text-danger'>{this.state.error.img}</p>
                         </div>
                         <div className='form-group'>
-                            <p>product type</p>
-                            <select name="productType" id="productType" className='form-control'  >
+                            <p>product Type</p>
+                            <select name="productType" id="productType" className='form-control mx-2'>
                                 <option value="mobile">mobile</option>
                                 <option value="tablet">tablet</option>
                                 <option value="laptop">laptop</option>
@@ -110,14 +99,14 @@ export default class FormProduct extends Component {
                         </div>
                         <div className='form-group'>
                             <p>description</p>
-                            <textarea name="description" id="description" className='from-control ' onInput={this.handleChange} />
-                            <p className='text-danger'>{this.state.error.description}</p>
+                            <textarea name="description" id="description" onInput={this.handleChange} />
+                            <p className='text-danger'> {this.state.error.description}</p>
                         </div>
                     </div>
                 </div>
-                <div className='car-footer'>
-                    <button className='btn btn-success mx-2' onClick={this.handleSubmit}>create</button>
-                    <button type='button' className='btn btn-warning'>update</button>
+                <div className='card-footer'>
+                    <button className='btn btn-success mx-2'>Create</button>
+                    <button type='button' className='btn btn-primary'>Update</button>
                 </div>
             </form>
         )
