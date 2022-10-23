@@ -54,6 +54,8 @@ export default class FormProduct extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
+        this.props.addProduct(this.state.productInfo);
+
     }
 
 
